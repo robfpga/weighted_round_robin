@@ -6,23 +6,24 @@ Round Robin (RR) arbitration is a common scheme used to fairly distribute work
 across a number of agents. A number of agents request access to some shared
 resource and are in turn granted access in a circular manner.
 
-For the majority of day-to-day arbitration, fixed priority arbitration schemes
-are sufficient. They are limited however by the fact that all requestors have
-fixed priority and therefore response with equal weighting to all
-requestors. For some use cases, it is desireable to weight certain requestors
+For the majority of day-to-day arbitration needs, fixed priority arbitration
+schemes are sufficient. They are limited however by the fact that all requestors
+have fixed priority and therefore respond with equal weighting to all
+requestors. For some use cases, it is desireable to weigh certain requestors
 over others. There are a variety of ways that this can be achieved.
 
-* __Duplicated request lines__ High priority agents can be allocated more than
-  one request line into the arbiter. By consequence, a single requesting agent
-  may be granted more frequently than others requestors. This scheme, although
-  simple, is inherently static in nature, and there is no way to dynamically
-  alter weights of agents in situ (at least trivially).
+* __Duplicated request lines__ High priority agents may be allocated more than
+  one request line. By consequence of this, a single agent may be granted more
+  frequently than others requestors. In addition, by intelligent allocation of
+  request lines, grant distribution may be distributed as desired over
+  time. This scheme, although simple, is inherently static in nature, and there
+  is no way to dynamically alter weights of agents in situ (at least trivially).
 * __Request Counters__ Alternatively, request can be masked against a
   counter. For each grant, the request counter is decremented. When the count
   reaches zero, the agent is no longer eligible for arbitration. Such a process
   continues until all counters have been exhausted. This scheme, although
   dynamic, does not ensure fairness between agents, as grants are not equally
-  distributed over time and requestor may experience long latency between
+  distributed over time and requestors may experience long latency between
   requests.
 * __Dynamically Weighted Arbiters [PDF][1]__ Finally, requestors can be
   attributed binary priorites. Arbitration procedes by walking through indexes
@@ -87,6 +88,9 @@ For a given input distribution, grant count is tabulated and graphed. The
 expected number of grants over the period of interest can be computed statically
 and is checked against the measured result.
 
-## References
+### Tests
+
+* __test_0__ Configure a static priority distribution and assert
+  requests. Tabulate received grants.
 
 [1]: http://ieeexplore.ieee.org/document/105173/?tp=&arnumber=105173&url=http:%2F%2Fieeexplore.ieee.org%2Fxpls%2Fabs_all.jsp%3Farnumber%3D105173
