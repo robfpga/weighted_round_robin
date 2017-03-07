@@ -72,7 +72,7 @@ There are no error conditions.
 
 ## Performance
 
-Requests are update on a cycle-by-cycle basis. Grants are retained until
+Requests are updated on a cycle-by-cycle basis. Grants are retained until
 explicitly acknowledged by the external agent.
 
 ## Verification Methodology
