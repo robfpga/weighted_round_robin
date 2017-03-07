@@ -1,5 +1,7 @@
 # Weighted Round Robin
 
+[![Build Status](https://travis-ci.org/stephenry/weighted_round_robin.svg?branch=master)](https://travis-ci.org/stephenry/weighted_round_robin)
+
 ## Introduction
 
 Round Robin (RR) arbitration is a common scheme used to fairly distribute work
