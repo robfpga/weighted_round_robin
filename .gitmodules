@@ -1,0 +1,12 @@
+[submodule "contrib/systemc"]
+	path = contrib/systemc
+	url = https://github.com/stephenry/systemc
+[submodule "contrib/libtb"]
+	path = contrib/libtb
+	url = https://github.com/stephenry/libtb
+[submodule "contrib/libv"]
+	path = contrib/libv
+	url = https://github.com/stephenry/libv
+[submodule "contrib/libpd"]
+	path = contrib/libpd
+	url = https://github.com/stephenry/libpd
