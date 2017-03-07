@@ -42,7 +42,7 @@ over others. There are a variety of ways that this can be achieved.
 ## Build Steps
 ~~~~
 git clone https://github.com/stephenry/weighted_round_robin.git
-cd linked_list_queue
+cd weighted_round_robin
 git submodule update --init --recursive
 cmake ../
 make
