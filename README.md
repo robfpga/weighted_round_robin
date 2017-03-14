@@ -44,6 +44,8 @@ over others. There are a variety of ways that this can be achieved.
 git clone https://github.com/stephenry/weighted_round_robin.git
 cd weighted_round_robin
 git submodule update --init --recursive
+mkdir build
+cd build
 cmake ../
 make
 ~~~
