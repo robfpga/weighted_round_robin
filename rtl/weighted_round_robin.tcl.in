@@ -25,5 +25,20 @@
 ## POSSIBILITY OF SUCH DAMAGE.
 ##========================================================================== //
 
-LIBTB_VERILATE(weighted_round_robin)
-LIBPD_VIVADO(weighted_round_robin)
+set prj weighted_round_robin
+create_project latency -in_memory
+
+# Source
+read_verilog @CMAKE_CURRENT_SOURCE_DIR@/$prj.sv
+read_verilog @LIBV_ROOT@/ffs.sv
+
+# XDC
+read_xdc @CMAKE_CURRENT_BINARY_DIR@/$prj.xdc
+
+# PD FLOW
+synth_design -name $prj -top $prj -include_dirs {@LIBPD_INCLUDE_DIRS@}
+opt_design
+place_design
+phys_opt_design
+route_design
+report_timing_summary
